@@ -1,9 +1,8 @@
 vsphere_user     = "watson@vsphere.local"
-vsphere_password = "****************"
+vsphere_password = "$E:uu2j9YB@t6h|&4FWH"
 vsphere_server   = "vcenter.gcloud.gsis.gr"
 
 datacenter       = "gcloud.gsis.gr"
-datastore        = ""
 resource_pool    = "/gcloud.gsis.gr/host/G-Cloud Next Gen//Resources"
 network          = "VLAN 3301 - 10.101.32.0%2f28"
 template         = "ng-rh-template"
@@ -20,4 +19,3 @@ PRODWEBINTVM1,10.101.32.34,28,10.101.32.33,VLAN 3301 - 10.101.32.0%2f28,ADM02-DA
 PRODWEBINTVM2,10.101.32.35,28,10.101.32.33,VLAN 3301 - 10.101.32.0%2f28,ADM02-DATA,4,32,100,150,true
 PRODWEBINTVM3,10.101.32.36,28,10.101.32.33,VLAN 3301 - 10.101.32.0%2f28,ADM02-DATA,16,128,200,,true
 EOT
-
