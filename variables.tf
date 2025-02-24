@@ -19,11 +19,6 @@ variable "datacenter" {
   type        = string
 }
 
-variable "datastore" {
-  description = "The name of the datastore where the VM will be stored"
-  type        = string
-}
-
 variable "resource_pool" {
   description = "The name of the resource pool for the VM"
   type        = string
@@ -74,4 +69,3 @@ variable "vm_list" {
   description = "A multi-line string containing VM configurations separated by new lines"
   type        = string
 }
-
