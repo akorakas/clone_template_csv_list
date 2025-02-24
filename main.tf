@@ -21,7 +21,8 @@ data "vsphere_datacenter" "dc" {
 }
 
 data "vsphere_datastore" "datastore" {
-  name          = var.datastore
+  for_each      = { for ds in distinct([for vm in local.parsed_vm_list : vm.datastore]) : ds => ds }
+  name          = each.key
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
@@ -70,7 +71,7 @@ locals {
 resource "vsphere_virtual_machine" "vm" {
   for_each         = { for vm in local.parsed_vm_list : vm.name => vm }
   name             = each.value.name
-  datastore_id     = data.vsphere_datastore.datastore.id
+  datastore_id     = data.vsphere_datastore.datastore[each.value.datastore].id
   resource_pool_id = data.vsphere_resource_pool.pool.id
   folder           = var.vm_folder
   num_cpus         = each.value.vm_cpu
@@ -137,4 +138,3 @@ resource "vsphere_virtual_machine" "vm" {
     }
   }
 }
-
