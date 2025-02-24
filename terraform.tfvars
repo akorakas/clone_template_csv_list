@@ -3,7 +3,7 @@ vsphere_password = "****************"
 vsphere_server   = "vcenter.gcloud.gsis.gr"
 
 datacenter       = "gcloud.gsis.gr"
-datastore        = "ADM02-DATA"
+datastore        = ""
 resource_pool    = "/gcloud.gsis.gr/host/G-Cloud Next Gen//Resources"
 network          = "VLAN 3301 - 10.101.32.0%2f28"
 template         = "ng-rh-template"
